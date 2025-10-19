@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GLORICRAFT</title>
- <link rel="stylesheet" href="style.css">
- <link rel="stylesheet" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -24,7 +23,7 @@
     </div>
   </header>
   
-  <section id="about">
+  <section id="about" class="fade-section">
     <h2>About Us</h2>
     <p>GLORICRAFT is a trusted company that focuses on customer satisfaction and high-quality products. We combine creativity, technology, and expertise to help you achieve your goals.</p>
     
@@ -35,29 +34,30 @@
     <p>To inspire creativity and warmth by transforming simple materials into beautiful handcrafted pieces that bring light, joy, and nature’s charm into every home.</p>
   </section>
 
-  <section id="product">
-  <h2>Our Products</h2>  
-  <div class="products">
-    <div class="card">
-      <img src="bouquet.jpg" alt="Product 1">
-      <p>BOUQUET CROCHET</p>
-      <p>550</p>
-    </div>
+  <section id="product" class="fade-section">
+    <h2>Our Products</h2>  
+    <div class="products">
+      <div class="card">
+        <img src="bouquet.jpg" alt="Product 1">
+        <p>BOUQUET CROCHET</p>
+        <p>₱550</p>
+      </div>
 
-    <div class="card">
-      <img src="singleflower.jpg" alt="Product 2">
-      <p>SINGLE CROCHET</p>
-      <p>250</p>
-    </div>
+      <div class="card">
+        <img src="singleflower.jpg" alt="Product 2">
+        <p>SINGLE CROCHET</p>
+        <p>₱250</p>
+      </div>
 
-    <div class="card">
-      <img src="withpot.jpg" alt="Product 3">
-      <p>WITH POT CROCHET</p>
-      <p>550</p>
-  </div>    
+      <div class="card">
+        <img src="withpot.jpg" alt="Product 3">
+        <p>WITH POT CROCHET</p>
+        <p>₱550</p>
+      </div>    
+    </div>
   </section>
 
-  <section id="whyus">
+  <section id="whyus" class="fade-section">
     <h2>Why Choose Us?</h2>
     <div class="whyus">
       <div class="card">
@@ -77,35 +77,52 @@
     </div>
   </section>
 
-  <section id="testimonials">
+  <section id="testimonials" class="fade-section">
     <h2>Testimonials</h2>
     <div class="testimonials">
       <div class="card">
-        <p>nagustuhan ng asawa ko yung single crochet, sa susunod ulit.</p>
-        <h4>Daniel Roque</h4>
+        <p>“Nagustuhan ng asawa ko yung single crochet, sa susunod ulit.”</p>
+        <h4>— Daniel Roque</h4>
       </div>
       
       <div class="card">
-        <p>cute ng pag kakagawa, magugustuhan ito ng gf ko.</p>
-        <h4>Adrian Roque</h4>
+        <p>“Cute ng pagkakagawa, magugustuhan ito ng gf ko.”</p>
+        <h4>— Adrian Roque</h4>
       </div>
       
       <div class="card">
-        <p>napaka cutie ng design and ang mura pa.</p>
-        <h4>Khyrie Glorioso</h4>
+        <p>“Napaka cutie ng design at ang mura pa.”</p>
+        <h4>— Khyrie Glorioso</h4>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="fade-section">
     <h2>Contact Us</h2>
     <p>Angelica</p>
-    <p>Tuadlesangelicapar@gmail.com</p>
+    <p><a href="mailto:tuadlesangelicapar@gmail.com">tuadlesangelicapar@gmail.com</a></p>
   </section>
 
   <footer>
     <p>© 2025 GLORICRAFT. All Rights Reserved.</p>
   </footer>
+  <script>
+      
+    const sections = document.querySelectorAll('.fade-section');
+
+    const appear = () => {
+      sections.forEach(sec => {
+        const position = sec.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (position < windowHeight - 100) {
+          sec.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', appear);
+    window.addEventListener('load', appear);
+  </script>
 
 </body>
-</html>            
+</html>
